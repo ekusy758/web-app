@@ -1,3 +1,6 @@
+Since: 20240504
+About: Webアプリケーション(HTML, CSS, JavaScript, PHP, JavaServlet)
+
 # 概要
 このプロジェクトではHTMLをベースとして表データをグラフにより可視化する機能を実装する
 
