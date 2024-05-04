@@ -1,0 +1,58 @@
+<!-- [chart.html] @encode.UTF-8 @update.20240418 -->
+<!-- チャート作成メイン画面 -->
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>チャート作成画面</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- jsファイル CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  <!-- jsファイル 独自 -->
+  <script src="lib/common.js"></script> <!-- 汎用処理関数を定義 -->
+  <script src="lib/render.js"></script> <!-- チャート描画処理を定義 -->
+  <script src="lib/handle.js"></script> <!-- イベントハンドラを定義 -->
+</head>
+<body>
+  <header class="header">
+    <h2 class="title-logo">
+      <a href="#">チャート作成画面 (ドラッグ＆ドロップ版)</a>
+    </h2>
+    <div class="setting-area">
+      <form class="setting">
+        <div class="chart-opt">チャートタイプ：
+          <input type="radio" name="option1" value="line" checked>
+          <label class="label" for="option1">折れ線</label>
+          <input type="radio" name="option1" value="bar">
+          <label class="label" for="option1">棒</label>
+          <input type="radio" name="option1" value="stacked-bar">
+          <label class="label" for="option1">積み棒</label>
+        </div>
+        <div class="delim-opt">区切り文字：
+          <input type="radio" name="option2" value="&#032;">
+          <label class="label" for="option2">スペース</label>
+          <input type="radio" name="option2" value="&#009;" checked>
+          <label class="label" for="option2">タブ</label>
+          <input type="radio" name="option2" value=",">
+          <label class="label" for="option2">カンマ</label>
+        </div>
+        <input class="capture-download" type="button" value="キャプチャダウンロード"
+        onclick="handlePngDownload()">
+      </form>
+    </div>
+  </header>
+  <main class="main">
+    <div class="contents-area">
+      <div class="drop-area" ondrop="handleDrop(event)" ondragover="handleDragOver(event)"
+        ondragenter="handleDragEnter(event)" ondragleave="handleDragLeave(event)">
+        ここにファイルをドラッグ＆ドロップ
+      </div>
+      <div class="wrap-canvas">
+        <canvas class="canvas"></canvas>
+      </div>
+    </div>
+  </main>
+  <footer class="footer"></footer>
+</body>

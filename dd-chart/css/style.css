@@ -1,0 +1,81 @@
+/* [style.css] @encode.UTF-8 @update.20240418
+ * chart.html用スタイルシート
+ */
+
+/*-------------------------------------------
+  見出し
+--------------------------------------------*/
+.title-logo {
+  width: 500px;
+  border: 1.2px solod #bbb;
+  box-shadow: 6px 6px #ccc;
+  white-space: nowrap; /* テキストを折り返さない */
+  text-align: center; /* 中央配置 (左右) */
+}
+
+.title-logo:hover {
+  opacity: 0.85;
+}
+
+.title-logo > a {
+  display: inline-block; /* インライン要素(aタグ)の幅指定に必要 */
+  width: 500px; /* 親要素に合わせるとaタグのクリック範囲が広がる */
+  color: dodgerblue;
+  text-decoration: none;
+}
+
+/*-------------------------------------------
+  オプション設定領域 (ラジオボタン)
+--------------------------------------------*/
+.setting {
+  display: flex; /* 子要素のblockを横並びにする */
+  column-gap: 15px; /* flexで要素間の隙間を作る */
+  margin-bottom: 10px;
+  height: 40px;
+  line-height: 40px; /* heightと合わせると中央配置 (上下) */
+  white-space: nowrap; /* テキストを折り返さない */
+}
+
+.chart-opt, .delim-opt {
+  border: 1.5px solid #32a1ce;
+  border-radius: 10px;
+  padding: 0 12px;
+}
+
+input[type=radio]:checked + label {
+  color: blue;
+}
+
+.label {
+  margin-right: 2px;
+}
+
+.label:hover {
+  opacity: 0.7; /* 半透明 */
+}
+
+/*-------------------------------------------
+  ドラッグ＆ドロップ領域
+--------------------------------------------*/
+.drop-area {
+  width: 100%;
+  height: 180px;
+  line-height: 180px; /* heightと合わせると中央配置 (上下) */
+  border: 2px dashed #ccc;
+  border-radius: 10px;
+  text-align: center; /* 中央配置 (左右) */
+  font-size: 20px;
+}
+
+.drop-area:hover {
+  opacity: 0.7; /* 半透明 */
+}
+
+/*-------------------------------------------
+  チャート描画キャンバス
+--------------------------------------------*/
+.wrap-canvas {
+  width: 80%;
+  height: 80%;
+  margin: 10px auto; /* 左右autoでblockを中央に */
+}
