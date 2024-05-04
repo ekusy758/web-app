@@ -1,10 +1,12 @@
-# web-app 
-Since: 20240504
-About: Webアプリケーション(HTML, CSS, JavaScript, PHP, JavaServlet...)
-
 # 概要
+Webアプリケーション (HTML, CSS, JavaScript, PHP, JavaServlet...)
+
 このプロジェクトではHTMLをベースとして表データをグラフにより可視化する機能を実装する
 
-## 機能
+## プログラムリスト
+・dd_chart  ドラッグ＆ドロップでファイルデータをグラフ化できるHTMLベースのツール
+            グラフの作成には chart.jsライブラリを利用する
+
+### 機能
 以下のような折れ線グラフをデータから作成する
 ![チャート](.\dd-chart\png\4列データ_折れ線.png)
