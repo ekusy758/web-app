@@ -46,13 +46,22 @@ const blob = new Blob([workerCode], { type: 'application/javascript' });
 const myWorker = new Worker(URL.createObjectURL(blob));
 
 // workerスレッド内アラームチェック処理で、
-// アラーム音起動指示が届いた時(予定時刻)の処理を定義
+// アラーム起動指示が届いた時(予定時刻)の処理を定義
 // スレッド内からDOM要素(audio)にアクセスできないため
 // メインスレッドで定義する必要がある
 myWorker.onmessage = function(event) {
   const message = event.data;
   if (message.type === 'TRIGGER') {
     audioPlay();
+  }
+}
+
+// アラーム起動指示が届いた時の再生処理
+function audioPlay() {
+  const audio = document.getElementById('audio');
+  if (audio.paused) {
+    audio.currentTime = 0 // 先頭へ戻す
+    audio.play();
   }
 }
 

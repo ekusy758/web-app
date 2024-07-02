@@ -83,17 +83,3 @@ function padZero(num) {
   }
   return after;
 }
-
-/********************************************************************
- [audioPlay]
-  概要　　：workerスレッドにアラーム起動メッセージが届いた時の再生用
-  引数　　：なし
-  戻り値　：なし
-********************************************************************/
-function audioPlay() {
-  const audio = document.getElementById('audio');
-  if (audio.paused) {
-    audio.currentTime = 0 // 先頭へ戻す
-    audio.play();
-  }
-}
