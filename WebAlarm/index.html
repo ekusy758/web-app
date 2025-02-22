@@ -1,9 +1,10 @@
-<!-- [WebAlarm.html] @encode.UTF-8 @update.20240616 -->
+<!-- [WebAlarm.html] @encode.UTF-8 @update.20250223 -->
 <!-- WEBアラームメイン画面 -->
 <!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>WEBアラーム</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="lib/common.js"></script>
@@ -30,9 +31,10 @@
       <div class="add-time">
         <span class="logo">1.アラーム追加</span>
         <div class="wrap-input">
-          <label for="select-time">アラーム時刻を選択してください。</label>
-          <span id="select-time" class="select-time">
-            <select name="hours">
+          <span class="select-time">
+            アラーム時刻を選択してください。<br>
+            <label for="hours" aria-label="何時"></label>
+            <select id="hours" name="hours">
               <option value="0">00時</option>
               <option value="1">01時</option>
               <option value="2">02時</option>
@@ -58,7 +60,8 @@
               <option value="22">22時</option>
               <option value="23">23時</option>
             </select>
-            <select name="minutes">
+            <label for="minutes" aria-label="何分"></label>
+            <select id="minutes" name="minutes">
               <option value="0">00分</option>
               <option value="1">01分</option>
               <option value="2">02分</option>
@@ -121,7 +124,9 @@
               <option value="59">59分</option>
             </select>
           </span>
-          <label for="input-text">アラーム説明を入力してください。</label>
+          <label for="input-text" aria-label="アラーム説明"></label>
+            アラーム説明を入力してください。
+          </label>
           <textarea id="input-text" rows="3" placeholder="(例)ＪＯＢ００１停止"></textarea>
         </div>
         <button type="button" onclick="addAlarm()">追加</button>
@@ -130,7 +135,9 @@
         <span class="logo">2.アラーム操作</span>
         <div class="wrap-button">
           <button type="button" onclick="saveAlarms()">保存</button>
-          <input id="input-file" type="file" accept=".json" onchange="loadAlarms(event)"><!-- 隠す -->
+          <!-- ファイルを開くダイアログ機能(デフォルトのボタンはCSSで隠す) -->
+          <label for="input-file" aria-label="隠し要素(JavaScriptからクリック用)"></label>
+          <input id="input-file" type="file" accept=".json" onchange="loadAlarms(event)">
           <button type="button" class="exec-input" onclick="execInputFile()">復活</button>
         </div>
         <div class="player">
