@@ -46,7 +46,7 @@ function fileToRender(file) {
   reader.readAsText(file, 'Shift-JIS') // 文字コードを設定すること
 
   // ラジオボタンから区切り文字を取得
-  let delim = getCheckedValue(document.getElementsByName('option2'));
+  let delim = getCheckedValue(document.getElementsByName('delimType'));
 
   reader.onload = () => {
     const contents = reader.result; // ファイルの内容

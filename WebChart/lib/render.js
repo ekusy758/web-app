@@ -1,5 +1,5 @@
 /* [render.js] @encode.UTF-8 @update.20240419
- *  概要　　：チャート描画処理を定
+ *  概要　　：チャート描画処理を定義
  *  依存関係：chart.js, jquery.min.js, common.js
  */
 
@@ -12,7 +12,7 @@
  **********************************************************/
 function renderChart(dataSource) {
   // ラジオボタンからチャートタイプを取得
-  const radio1 = document.getElementsByName('option1');
+  const radio1 = document.getElementsByName('chartType');
   let type = getCheckedValue(radio1);
 
   // キャンバス要素の2Dコンテキストを取得

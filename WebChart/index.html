@@ -3,7 +3,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>チャート作成画面</title>
   <link rel="stylesheet" href="css/style.css">
   <!-- jsファイル CDN -->
@@ -22,21 +24,21 @@
     </h2>
     <div class="setting-area">
       <form class="setting">
-        <div class="chart-opt">チャートタイプ：
-          <input type="radio" name="option1" value="line" checked>
-          <label class="label" for="option1">折れ線</label>
-          <input type="radio" name="option1" value="bar">
-          <label class="label" for="option1">棒</label>
-          <input type="radio" name="option1" value="stacked-bar">
-          <label class="label" for="option1">積み棒</label>
+        <div class="div_radios">チャートタイプ：
+          <input type="radio" id="radio1" name="chartType" value="line" checked>
+          <label class="label" for="radio1">折れ線</label>
+          <input type="radio" id="radio2" name="chartType" value="bar">
+          <label class="label" for="radio2">棒</label>
+          <input type="radio" id="radio3" name="chartType" value="stacked-bar">
+          <label class="label" for="radio3">積み棒</label>
         </div>
-        <div class="delim-opt">区切り文字：
-          <input type="radio" name="option2" value="&#032;">
-          <label class="label" for="option2">スペース</label>
-          <input type="radio" name="option2" value="&#009;" checked>
-          <label class="label" for="option2">タブ</label>
-          <input type="radio" name="option2" value=",">
-          <label class="label" for="option2">カンマ</label>
+        <div class="div_radios">区切り文字：
+          <input type="radio" id="radio4" name="delimType" value="&#032;">
+          <label class="label" for="radio4">スペース</label>
+          <input type="radio" id="radio5" name="delimType" value="&#009;" checked>
+          <label class="label" for="radio5">タブ</label>
+          <input type="radio" id="radio6" name="delimType" value=",">
+          <label class="label" for="radio6">カンマ</label>
         </div>
         <input class="capture-download" type="button" value="キャプチャダウンロード"
         onclick="handlePngDownload()">
