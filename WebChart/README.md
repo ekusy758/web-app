@@ -11,7 +11,8 @@ chart.htmlをブラウザで開きます。(IEでは動きません) <br>
 サンプルデータをドラッグ＆ドロップすると参考画像と同じグラフができます。<br>
 キャプチャダウンロードボタンを押すと、pngファイルとして保存します。
 
-# jsライブラリ動作保証　
-chart.js : version 4.4.2 <br>
-html2canvas : version 1.4.1 <br>
-jquery.js : version 3.7.0 <br>
+# 動作保証
+以下のバージョンでオープンソースライブラリを使用しています：
+- [jQuery](https://jquery.com/) v4.4.2（MIT License）
+- [html2canvas](https://html2canvas.hertzen.com/) v1.4.1（MIT License）
+- [Chart.js](https://www.chartjs.org/) v3.7.0（MIT License）
