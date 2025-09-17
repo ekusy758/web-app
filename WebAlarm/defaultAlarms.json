@@ -1,0 +1,5 @@
+[
+{"hour":"6","minute":"50","comment":"起床時間","enabled":true},
+{"hour":"7","minute":"30","comment":"起床時間","enabled":false},
+{"hour":"9","minute":"0","comment":"起床時間","enabled":false}
+]

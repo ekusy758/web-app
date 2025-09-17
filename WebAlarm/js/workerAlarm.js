@@ -68,4 +68,31 @@ function audioPlay() {
 // アラームチェック処理開始指示
 document.addEventListener('DOMContentLoaded', () => {
   myWorker.postMessage({ type: 'START' });
+
+  // ブラウザ起動時の設定読み込み処理を追加 2025.09.17
+  loadSettings();
 });
+
+function loadSettings() {
+  setTimeout(() => {
+    getDefaultAlarms().then((data) => {
+      if (data) {
+        alarms = JSON.parse(JSON.stringify(data));
+        myWorker.postMessage({ type: 'SYNC', alarms: data});
+        displayAlarms();
+      };
+    })
+  }, 100);
+}
+
+async function getDefaultAlarms() {
+  const url = "defaultAlarms.json";
+  let alarms;
+  try {
+    const response = await fetch(url);
+    alarms = await response.json(); 
+  } catch (error) {
+    console.log(`[msg:] デフォルトアラームファイル ${url} が見つかりませんでした。スキップします。`);
+  }
+  return alarms;
+}
