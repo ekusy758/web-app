@@ -101,3 +101,15 @@ function audioPlayStop() {
     audio.pause();
   }
 }
+
+/**
+ * スペースキーが押された時に audioタグの再生/停止 を行う
+ * @param {KeyboardEvent} event - キーボードイベント
+ * @returns {void}
+ */
+document.addEventListener("keydown", function (event) {
+  if (event.code === "Space") {
+    event.preventDefault();
+    audioPlayStop();
+  }
+});

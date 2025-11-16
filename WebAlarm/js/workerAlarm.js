@@ -71,6 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ブラウザ起動時の設定読み込み処理を追加 2025.09.17
   loadSettings();
+
+  setTimeout(() => {
+    alert("WEBアラームを起動しました。\nJavaScriptの自動再生を許可するために、音源のテスト再生をお願いします。");
+  }, 500);
 });
 
 function loadSettings() {
